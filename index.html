@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Pathfinding Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>C++ Pathfinding Algorithm Visualizer</h1>
+        </header>
+        
+        <div class="controls">
+            <select id="algorithm">
+                <option value="dijkstra">Dijkstra's Algorithm</option>
+                <option value="bfs">Breadth-First Search</option>
+                <option value="dfs">Depth-First Search</option>
+                <option value="bellman">Bellman-Ford</option>
+            </select>
+            
+            <div class="mode-buttons">
+                <button id="start-mode" class="mode-btn active">Set Start</button>
+                <button id="end-mode" class="mode-btn">Set End</button>
+                <button id="wall-mode" class="mode-btn">Add Walls</button>
+            </div>
+            
+            <button id="visualize">Find Path</button>
+            <button id="clear">Clear All</button>
+        </div>
+        
+        <div class="info">
+            <div class="stat">Algorithm: <span id="current-algo">Dijkstra</span></div>
+            <div class="stat">Steps: <span id="steps">0</span></div>
+            <div class="stat">Path Length: <span id="path-length">0</span></div>
+            <div class="stat">Time: <span id="time">0ms</span></div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="color start"></div>
+                <span>Start Point</span>
+            </div>
+            <div class="legend-item">
+                <div class="color end"></div>
+                <span>End Point</span>
+            </div>
+            <div class="legend-item">
+                <div class="color wall"></div>
+                <span>Wall</span>
+            </div>
+            <div class="legend-item">
+                <div class="color visited"></div>
+                <span>Visited</span>
+            </div>
+            <div class="legend-item">
+                <div class="color path"></div>
+                <span>Path</span>
+            </div>
+        </div>
+        
+        <div id="grid"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
